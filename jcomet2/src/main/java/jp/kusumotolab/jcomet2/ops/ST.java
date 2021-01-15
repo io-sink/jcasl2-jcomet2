@@ -17,4 +17,9 @@ public class ST extends Instruction {
     m.memory[getEffectiveAddress(adr, x)] = m.GR[r];
     m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 3;
+  }
 }

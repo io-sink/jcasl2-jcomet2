@@ -18,4 +18,9 @@ public class CALL extends Instruction {
     this.m.PR = this.getEffectiveAddress(adr, x);
     this.m.callLevel += 1;
   }
+
+  @Override
+  public int getCost() {
+	  return 3;
+  }
 }

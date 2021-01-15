@@ -10,4 +10,9 @@ public class SVC extends Instruction {
 
   @Override
   public void execute() {}
+
+  @Override
+  public int getCost() {
+	  return 2;
+  }
 }

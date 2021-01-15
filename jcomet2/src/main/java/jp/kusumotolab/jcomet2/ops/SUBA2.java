@@ -20,4 +20,9 @@ public class SUBA2 extends Instruction {
     this.updateFlags(result);
     m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 3;
+  }
 }

@@ -19,4 +19,9 @@ public class LD2 extends Instruction {
     m.OF = 0;
     m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 3;
+  }
 }

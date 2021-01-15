@@ -30,4 +30,9 @@ public class SRA extends Instruction {
     }
     this.m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 2;
+  }
 }

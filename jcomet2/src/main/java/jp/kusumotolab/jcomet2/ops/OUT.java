@@ -2,6 +2,7 @@ package jp.kusumotolab.jcomet2.ops;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
+
 import jp.kusumotolab.jcomet2.JComet2;
 
 public class OUT extends Instruction {
@@ -37,5 +38,10 @@ public class OUT extends Instruction {
       throw new UncheckedIOException(e);
     }
     this.m.PR += 3;
+  }
+
+  @Override
+  public int getCost() {
+	  return 4;
   }
 }

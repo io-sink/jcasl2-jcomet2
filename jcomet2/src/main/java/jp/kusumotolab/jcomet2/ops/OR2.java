@@ -20,4 +20,9 @@ public class OR2 extends Instruction {
     this.m.OF = 0;
     this.m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 3;
+  }
 }

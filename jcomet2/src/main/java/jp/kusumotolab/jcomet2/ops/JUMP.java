@@ -15,4 +15,9 @@ public class JUMP extends Instruction {
     int x = adrx[1];
     this.m.PR = this.getEffectiveAddress(adr, x);
   }
+
+  @Override
+  public int getCost() {
+	  return 2;
+  }
 }

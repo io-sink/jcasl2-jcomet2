@@ -18,4 +18,9 @@ public class SUBL1 extends Instruction {
     this.updateFlags(result, true);
     this.m.PR += 1;
   }
+
+  @Override
+  public int getCost() {
+	  return 1;
+  }
 }

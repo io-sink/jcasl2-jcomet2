@@ -71,6 +71,10 @@ abstract public class Instruction implements Util {
     return new int[] {s, l};
   }
 
+  public int getCost() {
+	  throw new RuntimeException();
+  }
+
   void updateFlags(int result) {
     updateFlags(result, false);
   }

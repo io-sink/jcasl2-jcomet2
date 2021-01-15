@@ -2,6 +2,7 @@ package jp.kusumotolab.jcomet2.ops;
 
 import java.io.IOException;
 import java.io.UncheckedIOException;
+
 import jp.kusumotolab.jcomet2.JComet2;
 
 public class IN extends Instruction {
@@ -33,5 +34,10 @@ public class IN extends Instruction {
       this.m.memory[s + i] = line.codePointAt(i);
     }
     this.m.PR += 3;
+  }
+
+  @Override
+  public int getCost() {
+	  return 4;
   }
 }

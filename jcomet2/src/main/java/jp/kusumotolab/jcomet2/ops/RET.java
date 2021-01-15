@@ -19,4 +19,9 @@ public class RET extends Instruction {
       this.m.callLevel -= 1;
     }
   }
+
+  @Override
+  public int getCost() {
+	  return 2;
+  }
 }

@@ -18,4 +18,9 @@ public class ADDA1 extends Instruction {
     this.updateFlags(result);
     m.PR += 1;
   }
+
+  @Override
+  public int getCost() {
+	  return 1;
+  }
 }

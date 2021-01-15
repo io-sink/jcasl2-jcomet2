@@ -17,4 +17,9 @@ public class PUSH extends Instruction {
     this.m.memory[this.m.getSP()] = this.getEffectiveAddress(adr, x);
     this.m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 3;
+  }
 }

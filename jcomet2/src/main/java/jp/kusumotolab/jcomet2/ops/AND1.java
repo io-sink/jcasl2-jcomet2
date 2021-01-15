@@ -18,4 +18,9 @@ public class AND1 extends Instruction {
     this.m.OF = 0;
     m.PR += 1;
   }
+
+  @Override
+  public int getCost() {
+	  return 1;
+  }
 }

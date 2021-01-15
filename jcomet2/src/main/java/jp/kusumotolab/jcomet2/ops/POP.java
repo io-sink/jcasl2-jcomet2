@@ -15,4 +15,9 @@ public class POP extends Instruction {
     this.m.setSP(this.m.getSP() + 1);
     this.m.PR += 1;
   }
+
+  @Override
+  public int getCost() {
+	  return 2;
+  }
 }

@@ -16,4 +16,9 @@ public class RPOP extends Instruction {
     }
     this.m.PR += 1;
   }
+
+  @Override
+  public int getCost() {
+	  return 9;
+  }
 }

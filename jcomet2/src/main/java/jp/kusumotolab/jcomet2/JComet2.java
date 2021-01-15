@@ -24,6 +24,7 @@ import java.util.function.Function;
 import java.util.function.IntFunction;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
+
 import jp.kusumotolab.jcomet2.ops.ADDA1;
 import jp.kusumotolab.jcomet2.ops.ADDA2;
 import jp.kusumotolab.jcomet2.ops.ADDL1;
@@ -146,6 +147,7 @@ public class JComet2 implements Util {
   private final List<Integer> breakPoints;
   public int callLevel = 0;
   public int stepCount = 0;
+  public int costSum = 0;
   private StatusMonitor monitor;
 
   private final int initSP = 0xff00;
@@ -220,6 +222,8 @@ public class JComet2 implements Util {
   public void exit() {
     if (this.isCountStep) {
       System.out.println("Step count: " + this.stepCount);
+      System.out.println("Cost: " + this.costSum);
+
     }
     if (this.isAutoDump) {
       System.err.println("dump last status to last_state.txt");
@@ -256,9 +260,10 @@ public class JComet2 implements Util {
   }
 
   private void step() {
-    this.getInstruction()
-        .execute();
+	Instruction instruction = this.getInstruction();
+	instruction.execute();
     this.stepCount += 1;
+    this.costSum += instruction.getCost();
   }
 
   private void watch(String variables, boolean decimalFlag) {
@@ -376,6 +381,7 @@ public class JComet2 implements Util {
   private void dumpToFile(File file, int lines) {
     try (Writer writer = new FileWriter(file); BufferedWriter bw = new BufferedWriter(writer)) {
       bw.write(String.format("Step count: %d%n", this.stepCount));
+      bw.write(String.format("Cost: %d%n", this.costSum));
       bw.write(String.format("PR: #%04x%n", this.PR));
       bw.write(String.format("SP: #%04x%n", this.getSP()));
       bw.write(String.format("OF: #%1d%n", this.OF));

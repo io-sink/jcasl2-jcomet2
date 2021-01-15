@@ -17,4 +17,9 @@ public class LAD extends Instruction {
     m.GR[r] = getEffectiveAddress(adr, x);
     m.PR += 2;
   }
+
+  @Override
+  public int getCost() {
+	  return 2;
+  }
 }

@@ -21,6 +21,6 @@ public class LD1 extends Instruction {
 
   @Override
   public int getCost() {
-	  return 2;
+	  return 1;
   }
 }
